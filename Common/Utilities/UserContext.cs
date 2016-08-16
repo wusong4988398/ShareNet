@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using ShareNet.Common.User;
+using ShareNet.Common.User.Account;
+using ShareNet.Common.Utilities.Extensions;
+using ShareNet.Infrastructure.Utilities;
+using WusNet.Infrastructure.WusNet;
+
+namespace ShareNet.Common.Utilities
+{
+    /// <summary>
+    /// 用户上下文
+    /// </summary>
+    public class UserContext
+    {
+        /// <summary>
+        /// 获取当前用户
+        /// </summary>
+        public static IUser CurrentUser
+        {
+            get
+            {
+                IAuthenticationService authenticationService = DIContainer.ResolvePerHttpRequest<IAuthenticationService>();
+                var currentUser = authenticationService.GetAuthenticatedUser();
+                if (currentUser != null)
+                    return currentUser;
+
+                string token = string.Empty;
+                if (HttpContext.Current != null && HttpContext.Current.Request != null)
+                {
+
+                   
+                    token= HttpContext.Current.Request.Form.Get<string>("CurrentUserIdToken", String.Empty);
+                    if (string.IsNullOrEmpty(token))
+                        token = HttpContext.Current.Request.QueryString.Get<string>("CurrentUserIdToken", string.Empty);
+                }
+
+                if (!string.IsNullOrEmpty(token))
+                {
+                    token = WebUtility.UrlDecode(token);
+                    bool isTimeOut = false;
+                    long userId = Utility.DecryptTokenForUploadfile(token.ToString(), out isTimeOut);
+                    if (userId > 0)
+                    {
+                        IUserService userService = DIContainer.Resolve<IUserService>();
+                        currentUser = userService.GetUser(userId);
+                        if (currentUser != null)
+                        {
+                            return currentUser;
+                        }
+                    }
+                }
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获取当前空间域名
+        /// </summary>
+        public static string CurrentSpaceKey(ControllerContext controllerContext)
+        {
+            return controllerContext.RequestContext.GetParameterFromRouteDataOrQueryString("SpaceKey");
+        }
+    }
+}
