@@ -31,11 +31,7 @@ namespace ShareNet.Common.UI.Themes
         /// </summary>
         public string ApplicationKey { get; internal set; }
        
-        public override void Execute()
-        {
-            base.ExecutePageHierarchy();
-            
-        }
+     
         /// <summary>
         /// 重写基类的方法用于实现View中设置layout也可以使用视图引擎定位
         /// </summary>

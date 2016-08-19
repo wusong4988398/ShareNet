@@ -19,8 +19,16 @@ namespace ShareNet.Common.Common.Settings.Repositories
         ICacheService cacheService = DIContainer.Resolve<ICacheService>();
         /// <summary>
         /// 缓存设置
-        /// </summary>
-        protected static RealTimeCacheHelper RealTimeCacheHelper { get { return EntityData.ForType(typeof(TSettingsEntity)).RealTimeCacheHelper; } }
+        /// </summary>GetData
+        protected static RealTimeCacheHelper RealTimeCacheHelper {
+            get
+            { 
+                //EntityData.ForType1(typeof(TSettingsEntity)); 
+                //return new EntityData(typeof(TSettingsEntity)).
+               return EntityData.ForType(typeof(TSettingsEntity)).RealTimeCacheHelper; 
+               // return new EntityData().GetData().RealTimeCacheHelper;
+
+            } }
 
         /// <summary>
         /// 默认Database实例
@@ -110,10 +118,10 @@ namespace ShareNet.Common.Common.Settings.Repositories
         }
 
         /// <summary>
-        /// 把TSettingsEntity对象转换成xml
+        /// 把TSettingsEntity对象转换成json
         /// </summary>
         /// <param name="settingsEntity">被转换的对象</param>
-        /// <returns>序列化后的xml字符串</returns>
+        /// <returns>序列化后的json字符串</returns>
         private string Serialize(TSettingsEntity settingsEntity)
         {
             string json = null;

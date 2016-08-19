@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using ShareNet.Common.PresentAreas;
+using ShareNet.Common.UI.Themes;
 
-namespace Web.Controllers
+namespace ShareNet.Web.Controllers
 {
+    [Themed(PresentAreaKeysOfBuiltIn.Channel, IsApplication = false)]
     public class HomeController : Controller
     {
         public ActionResult Index()

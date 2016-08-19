@@ -97,7 +97,9 @@ namespace ShareNet.Common.UI.Themes
         #endregion
 
         #region IEntity 成员
+        [Ignore]
         object IEntity.EntityId { get { return this.Id; } }
+        [Ignore]
         bool IEntity.IsDeletedInDatabase { get; set; }
         #endregion
 

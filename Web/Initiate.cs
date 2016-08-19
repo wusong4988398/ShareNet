@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using ShareNet.Common.Common.Settings;
+using ShareNet.Common.Common.Settings.Repositories;
 using ShareNet.Common.Mvc.ModelBinder;
 using ShareNet.Common.Mvc.TempData;
 using ShareNet.Common.UI;
@@ -88,8 +90,8 @@ namespace ShareNet.Web
 
             #region 范型注入
 
-            //containerBuilder.RegisterGeneric(typeof(SettingManager<>)).As(typeof(ISettingsManager<>)).SingleInstance().PropertiesAutowired();
-            //containerBuilder.RegisterGeneric(typeof(SettingsRepository<>)).As(typeof(ISettingsRepository<>)).SingleInstance().PropertiesAutowired();
+            containerBuilder.RegisterGeneric(typeof(SettingsManager<>)).As(typeof(ISettingsManager<>)).SingleInstance().PropertiesAutowired();
+            containerBuilder.RegisterGeneric(typeof(SettingsRepository<>)).As(typeof(ISettingsRepository<>)).SingleInstance().PropertiesAutowired();
             containerBuilder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).SingleInstance().PropertiesAutowired();
 
 
@@ -164,7 +166,7 @@ namespace ShareNet.Web
             //注册皮肤选择器
             ThemeService.RegisterThemeResolver("Channel", new ChannelThemeResolver());
             //ThemeService.RegisterThemeResolver("UserSpace", new UserSpaceThemeResolver());
-            //ThemeService.RegisterThemeResolver("ControlPanel", new ControlPanelThemeResolver());
+            ThemeService.RegisterThemeResolver("ControlPanel", new ControlPanelThemeResolver());
         }
     }
 }

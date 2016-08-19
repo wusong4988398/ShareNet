@@ -25,7 +25,7 @@ namespace ShareNet.Common.UI
         {
             string themeKey = null;
             string appearanceKey = null;
-            SiteSettings.SiteSetting siteSettings = DIContainer.Resolve<ISettingsManager<SiteSettings.SiteSetting>>().Get();
+            SiteSettings siteSettings = DIContainer.Resolve<ISettingsManager<SiteSettings>>().Get();
             if (!string.IsNullOrEmpty(siteSettings.SiteTheme) && !string.IsNullOrEmpty(siteSettings.SiteThemeAppearance))
             {
                 themeKey = siteSettings.SiteTheme;

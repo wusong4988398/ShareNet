@@ -103,7 +103,9 @@ namespace ShareNet.Common.PresentAreas
 
 
         #region IEntity 成员
+       [Ignore]
         object IEntity.EntityId { get { return this.PresentAreaKey; } }
+        [Ignore]
         bool IEntity.IsDeletedInDatabase { get; set; }
         #endregion
 

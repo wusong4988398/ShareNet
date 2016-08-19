@@ -89,7 +89,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AccountController.cs" />
+    <Compile Include="Controllers\ChannelController.cs" />
+    <Compile Include="Controllers\ControlPanelController.cs" />
     <Compile Include="Implementation\DefaultIdGenerator.cs" />
     <Compile Include="Mvc\Attributes\NoCleanHtmlAttribute.cs" />
     <Compile Include="Mvc\Attributes\NoFilterWordAttribute.cs" />
@@ -99,9 +100,11 @@
     <Compile Include="Mvc\TempData\WusNetControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\ChannelThemeResolver.cs" />
+    <Compile Include="UI\ControlPanelThemeResolver.cs" />
     <Compile Include="UI\Resources\IPageResourceManager.cs" />
     <Compile Include="UI\Resources\MetaEntry.cs" />
     <Compile Include="UI\Resources\PageResourceManager.cs" />
+    <Compile Include="UrlRoutingRegistration.cs" />
     <Compile Include="User\DefaultUserIdToUserNameDictionary.cs" />
     <Compile Include="User\UserIdToUserNameDictionary.cs" />
     <Compile Include="User\FormsAuthenticationService.cs" />
@@ -130,6 +133,8 @@
     <Compile Include="Utilities\WordFilter\WordFilterStatus.cs" />
     <Compile Include="Utilities\WordFilter\WordFilterTypeIds.cs" />
     <Compile Include="Utilities\WordFilter\WordGroup.cs" />
+    <Compile Include="ViewModels\LoginEditModel.cs" />
+    <Compile Include="ViewModels\SimpleHomeEditModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

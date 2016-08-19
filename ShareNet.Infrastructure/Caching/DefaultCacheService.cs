@@ -121,7 +121,12 @@ namespace WusNet.Infrastructure.Caching
             this.cache.Set(cacheKey, value, timeSpan);
 
         }
-
+        /// <summary>
+        /// 添加或更新缓存
+        /// </summary>
+        /// <param name="cacheKey">缓存项标识</param>
+        /// <param name="value">缓存项</param>
+        /// <param name="cachingExpirationType">缓存期限类型</param>
         public void Set(string cacheKey, object value, CachingExpirationType cachingExpirationType)
         {
             this.Set(cacheKey, value, this.cachingExpirationDictionary[cachingExpirationType]);

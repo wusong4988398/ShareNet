@@ -2,51 +2,67 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
-using ShareNet.Infrastructure.Utilities;
+
 using WusNet.Infrastructure.Caching;
+using WusNet.Infrastructure.Utilities;
 
 namespace WusNet.Infrastructure.WusNet
 {
+
+    /// <summary>
+    /// 实体元数据
+    /// </summary>
     [Serializable]
     public class EntityData
     {
-        // Fields
+        // FieldsentityDatas
         private static ConcurrentDictionary<Type, EntityData> entityDatas = new ConcurrentDictionary<Type, EntityData>();
         private static readonly object lockObject = new object();
         private RealTimeCacheHelper realTimeCacheHelper;
 
+      
         public EntityData(Type t)
         {
+   
             this.Type = t;
             this.TypeHashID = EncryptionUtility.MD5_16(t.FullName);
-            ICacheService service = DIContainer.Resolve<ICacheService>();
-
+            ICacheService cacheService = DIContainer.Resolve<ICacheService>();
             RealTimeCacheHelper helper = this.ParseCacheTimelinessHelper(t);
-            if (service.EnableDistributedCache)
+            if (cacheService.EnableDistributedCache)
             {
-                service.Set(RealTimeCacheHelper.GetCacheKeyOfTimelinessHelper(this.TypeHashID), helper, CachingExpirationType.Invariable);
-
+                cacheService.Set(RealTimeCacheHelper.GetCacheKeyOfTimelinessHelper(this.TypeHashID), helper, CachingExpirationType.Invariable);
+                return;
             }
-            else
-            {
-                this.realTimeCacheHelper = helper;
-
-            }
+            this.realTimeCacheHelper = helper;
         }
 
+        public EntityData(Type t,string str=null)
+        {
+
+          
+        }
+        /// <summary>
+        /// 根据实体类型获取实体元数据
+        /// </summary>
+        /// <param name="t">实体类型</param>
+        /// <returns>返回元数据</returns>
         public static EntityData ForType(Type t)
         {
-            EntityData data;
-            if (!entityDatas.TryGetValue(t,out data)&&(data==null))
+
+            EntityData entityData;
+            if (!entityDatas.TryGetValue(t, out entityData))
             {
-                data=new EntityData(t);
-                entityDatas[t] = data;
-
+                entityData = new EntityData(t);
+                entityDatas[t] = entityData;
             }
-            return data;
+            return entityData;
         }
+      
 
-        //属性
+     
+        /// <summary>
+        /// 实体缓存设置
+        /// </summary>
         public RealTimeCacheHelper RealTimeCacheHelper
         {
             get
@@ -54,7 +70,7 @@ namespace WusNet.Infrastructure.WusNet
                 ICacheService service = DIContainer.Resolve<ICacheService>();
                 if (!service.EnableDistributedCache)
                 {
-                    return this.RealTimeCacheHelper;
+                    return this.realTimeCacheHelper;
                 }
                 string cacheKeyOfTimelinessHelper = RealTimeCacheHelper.GetCacheKeyOfTimelinessHelper(this.TypeHashID);
 

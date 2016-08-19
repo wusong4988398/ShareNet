@@ -135,6 +135,7 @@ namespace ShareNet.Common.UI.Themes
             }
             else
             {
+                //获取视图VIew地址
                 viewPath = GetViewPathOfTheme(themeAppearance, viewName, controllerName);
                 masterPath = GetLayoutPathOfTheme(themeAppearance, masterName, null);
             }
@@ -263,7 +264,7 @@ namespace ShareNet.Common.UI.Themes
             cacheKeyBuilder.AppendFormat(",{0}", controllerName);
             cacheKeyBuilder.AppendFormat(",{0}", viewName);
 
-            string cacheKey = cacheKeyBuilder.ToString();
+            string cacheKey = cacheKeyBuilder.ToString();//例如:viewPath:Channel,Default,Home,Index
 
 
             ICacheService cacheService = DIContainer.Resolve<ICacheService>();
@@ -271,7 +272,8 @@ namespace ShareNet.Common.UI.Themes
 
             if (viewPath == null)
             {
-                if (IsSpecificPath(viewName))
+                
+                if (IsSpecificPath(viewName))//确定是否是一个给定的路径
                 {
                     viewPath = GetPathFromSpecificName(viewName);
                 }
@@ -280,6 +282,7 @@ namespace ShareNet.Common.UI.Themes
                     //{3}:PresentAreaKey，{2}:ThemeKey，{1}:ControllerName，{0}:ViewName
 
                     List<string> viewLocations = new List<string>();
+                    //~/Themes/Channel/Default/Views/Home/Index.cshtml
                     viewLocations.Add(string.Format("~/Themes/{3}/{2}/Views/{1}/{0}.cshtml", viewName, controllerName, themeAppearance.ThemeKey, themeAppearance.PresentAreaKey));
 
                     //如果Theme有Parent，则把Parent的路径也作为查找路径

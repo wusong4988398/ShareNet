@@ -206,6 +206,36 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\appearance.css" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Images\spb-intro1-bg.jpg" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Images\spb-intro2-bg.jpg" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Images\spb-intro3-bg.jpg" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Images\spb-page-bg.png" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Preview.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\appearance.css" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-0065a2.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-333333.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-999999.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-c0d8e8.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-cc0000.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-dddddd.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite-ff5e0d.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\icons\tn-icons-sprite.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-allbg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-bg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-icon.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-icon4.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-title-icon.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-topbg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-topmenu-icon.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-topmenu-line.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-admin-topmenubg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-formbtn.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-login-form_bg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-logo.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-sidebar-bg.png" />
+    <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\wait.gif" />
+    <Content Include="Themes\ControlPanel\Default\theme.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -213,27 +243,22 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Themes\Channel\Default\Theme.config" />
+    <Content Include="Themes\Channel\Default\Appearances\Default\Appearance.config" />
+    <Content Include="Themes\Channel\Default\Views\Home\Index.cshtml" />
+    <Content Include="Themes\Web.config" />
+    <Content Include="Themes\ControlPanel\Default\Views\ControlPanel\Home.cshtml" />
+    <Content Include="Themes\ControlPanel\Default\Layouts\_ControlPanel.cshtml" />
+    <Content Include="Themes\Channel\Default\Views\Channel\SimpleHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Themes\Channel\Default\Appearances\Dark\" />
+    <Folder Include="Themes\Channel\Default\Layouts\" />
+    <Folder Include="Themes\Channel\Default\Views\Account\" />
+    <Folder Include="Themes\Channel\Layouts\" />
+    <Folder Include="Themes\Channel\Portal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

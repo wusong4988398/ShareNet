@@ -6,15 +6,14 @@ using WusNet.Infrastructure.WusNet;
 
 namespace ShareNet.Common.Common.SiteSetting
 {
-    public class SiteSettings
-    {
+   
         /// <summary>
         /// 站点设置
         /// </summary>
         /// <remarks>安装站点时，必须设置MainSiteRootUrl</remarks>
         [CacheSetting(true)]
         [Serializable]
-        public class SiteSetting : IEntity
+        public class SiteSettings : IEntity
         {
             private string beiAnScript = string.Empty;
 
@@ -310,4 +309,4 @@ namespace ShareNet.Common.Common.SiteSetting
             [Display(Name = "小图标")] small
         }
     }
-}
+

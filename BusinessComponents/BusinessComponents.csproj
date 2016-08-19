@@ -85,6 +85,7 @@
     <Compile Include="PresentAreas\PresentAreaKeysOfBuiltIn.cs" />
     <Compile Include="PresentAreas\PresentAreaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Themes\ThemedWebViewPage`1.cs" />
     <Compile Include="UI\Themes\IThemeResolver.cs" />
     <Compile Include="UI\Themes\Theme.cs" />
     <Compile Include="UI\Themes\ThemeAppearance.cs" />
@@ -98,6 +99,10 @@
     <Compile Include="User\Account\IUserService.cs" />
     <Compile Include="User\Account\UserEnum.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="User\OnlineUser\OnlineUser.cs" />
+    <Compile Include="User\OnlineUser\OnlineUserService.cs" />
+    <Compile Include="User\OnlineUser\Repositories\IOnlineUserRepository.cs" />
+    <Compile Include="User\OnlineUser\Repositories\OnlineUserRepository.cs" />
     <Compile Include="User\Point\Configuration\PointSettings.cs" />
     <Compile Include="User\Point\PointService.cs" />
     <Compile Include="User\Role\RoleNames.cs" />

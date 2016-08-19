@@ -7,6 +7,8 @@ using PetaPoco;
 using ShareNet.Common.Common.Settings;
 using ShareNet.Common.User.Account;
 using ShareNet.Common.User.Account.Configuration;
+using ShareNet.Common.User.OnlineUser;
+using ShareNet.Common.Utilities;
 using ShareNet.Infrastructure.PetaPoco;
 using ShareNet.Infrastructure.PetaPoco.Attributes;
 using WusNet.Infrastructure.Caching;
@@ -553,20 +555,20 @@ namespace ShareNet.Common.User
         //    }
         //}
 
-        ///// <summary>
-        ///// 判断用户是否在线
-        ///// </summary>
-        //[Ignore]
-        //public bool IsOnline
-        //{
-        //    get
-        //    {
-        //        if (UserContext.CurrentUser != null && UserContext.CurrentUser.UserId == this.UserId)
-        //            return true;
-        //        else
-        //            return new OnlineUserService().IsOnline(this.UserName);
-        //    }
-        //}
+        /// <summary>
+        /// 判断用户是否在线
+        /// </summary>
+        [Ignore]
+        public bool IsOnline
+        {
+            get
+            {
+                if (UserContext.CurrentUser != null && UserContext.CurrentUser.UserId == this.UserId)
+                    return true;
+                else
+                    return new OnlineUserService().IsOnline(this.UserName);
+            }
+        }
 
         ///// <summary>
         ///// 总浏览数

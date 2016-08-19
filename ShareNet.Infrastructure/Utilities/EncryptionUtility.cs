@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+using ShareNet.Infrastructure.Utilities;
 
-namespace ShareNet.Infrastructure.Utilities
+namespace WusNet.Infrastructure.Utilities
 {
     /// <summary>
     /// 加密工具类

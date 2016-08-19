@@ -13,7 +13,7 @@ namespace ShareNet.Common.UI.Themes
     /// <summary>
     /// 外观实体
     /// </summary>
-    [TableName("tn_ThemeAppearances")]
+    [TableName("ws_ThemeAppearances")]
     [PrimaryKey("Id", AutoIncrement = false)]
     [CacheSetting(true, ExpirationPolicy = EntityCacheExpirationPolicies.Stable)]
     [Serializable]
@@ -59,6 +59,7 @@ namespace ShareNet.Common.UI.Themes
         /// </summary>
         public ThemeAppearance()
         {
+
         }
 
         /// <summary>
@@ -230,7 +231,9 @@ namespace ShareNet.Common.UI.Themes
         #endregion
 
         #region IEntity 成员
+        [Ignore]
         object IEntity.EntityId { get { return this.Id; } }
+        [Ignore]
         bool IEntity.IsDeletedInDatabase { get; set; }
         #endregion
 
