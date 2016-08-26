@@ -1,0 +1,119 @@
+﻿
+
+
+
+@model SimpleHomeEditModel
+
+@{
+    var registrationMode = DIContainer.Resolve<ISettingsManager<UserSettings>>().Get().RegistrationMode;
+
+    List<string> photos = new List<string>();
+    //for (int i = 0; i < 3; i++)
+    //{
+    //    photos.Add(WebUtility.ResolveUrl(string.Format("~/Themes/Channel/Default/Appearances/Default/Images/spb-intro{0}-bg.jpg", i + 1)));
+    //}
+    //photos.RemoveAt(0);
+}
+<!DOCTYPE html>
+<html class="spb-welcome-html">
+@using (Html.BeginHead())
+{
+    @Styles.Render("~/Bundle/Styles/Site")
+    @Html.RenderStyles()
+    @Scripts.Render("~/Bundle/Scripts/jQuery")
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+}
+
+<body class="spb-welcome-page">
+
+<div class="spb-welcome-area">
+    <div class="spb-welcome-bg" id="photoContainer" @*data-photos="@Json.Encode(photos)"*@>
+        @*<img id="body_background_imag" src="@(Tunynet.Utilities.WebUtility.ResolveUrl("~/Themes/Channel/Default/Appearances/Default/Images/spb-intro1-bg.jpg"))" />*@
+    </div>
+    <div class="spb-welcome-wrap" id="loginBody" @*style="display: none;"*@>
+        <div class="spb-welcome-profile">
+            <div class="spb-welcome-logo">
+                <h1>登录</h1>
+            </div>
+            <div class="spb-welcome-slogan">
+                <p>
+                    社区基石，近乎完美
+                </p>
+            </div>
+        </div>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            
+            @Html.AntiForgeryToken()
+            <div class="spb-welcome-login">
+                <div class="spb-welcome-id">
+                    <div class="spb-welcome-textbox">
+                        @Html.TextBoxFor(n => n.UserName, new {@class = "tn-textbox tn-border-gray"})
+                    </div>
+                    <div class="spb-welcome-option">
+                        @if (registrationMode == RegistrationMode.All)
+                        {
+                            <a class="spb-welcome-link" tabindex="-1" href="@SiteUrls.Instance().Register()">注册帐户</a>
+                        }
+                            @*@{
+                                IEnumerable<AccountType> accountTypes = new AccountBindingService().GetAccountTypes(true);
+                                if (accountTypes != null && accountTypes.Count() > 0)
+                                {
+                                    <div class="spb-welcome-open-id">
+                                        <span class="spb-welcome-text">第三方帐号登录：</span>
+                                        @{
+                                    foreach (var accountType in accountTypes)
+                                    {
+                                        <a tabindex="-1" class="spb-welcome-open-icon spb-welcome-open-@accountType.AccountTypeKey" href="javascript:;" onclick="window.open('@SiteUrls.Instance().LoginToThird(accountType.AccountTypeKey)', 'ThirdLogin', 'width=600,height=500,menubar=0,scrollbars=0, status=1,titlebar=0,toolbar=0,location=1'); return false;"></a>
+                                    }
+                                        }
+                                    </div>
+                                }
+                                }*@</div>
+                </div>
+                <div class="spb-welcome-password">
+                    <div class="spb-welcome-textbox">
+                        @Html.TextBoxFor(n => n.Password, new {type = "password", @class = "tn-textbox tn-border-gray", autocomplete = "off"})
+                    </div>
+                    <div class="spb-welcome-option">
+                        <span class="spb-welcome-remember">
+                                @Html.CheckBoxFor(n => n.RememberPassword, new {@class = "tn-checkbox"})
+                                <label for="RememberPassword">
+                                    下次自动登录
+                                </label>
+                                @*</span><a class="spb-welcome-link" tabindex="-1" href="@SiteUrls.Instance().FindPassword()">忘记密码</a>*@
+                    </div>
+                </div>
+                <div class="spb-welcome-btn">
+                    <div class="spb-welcome-login-btn">
+                        @Html.Button("登录", ButtonTypes.Submit, HighlightStyles.Primary, ButtonSizes.Large)
+                    </div>
+                    <p class="spb-welcome-look">
+                        <a tabindex="-1" href="@SiteUrls.Instance().SiteHome()">随便看看</a>
+                    </p>
+                </div>
+            </div>
+        }
+        <div class="spb-welcome-footer">
+            <p>
+                Powered by <a href="http://www.jinhusns.com" target="_blank" title="近乎官网">近乎</a> v4.3 ©2005-2015 Tunynet Inc.
+            </p>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Bundle/Scripts/Site")
+@Html.RenderScripts()
+@Html.RenderScriptBlocks()
+</body>
+</html>
+@Html.ScriptBlock(@<script type="text/javascript" language="javascript">
+
+
+    </script>)
