@@ -67,7 +67,17 @@ namespace WusNet.Infrastructure.Globalization
             return GetMissingResourcePrompt(resourcesKey);
         }
 
- 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commonResourceFileBaseName"></param>
+        /// <param name="commonResourceAssembly"></param>
+        public static void Initialize(string commonResourceFileBaseName, Assembly commonResourceAssembly)
+        {
+            _commonResourceManager = new ResourceManager(commonResourceFileBaseName, commonResourceAssembly);
+            _commonResourceManager.IgnoreCase = true;
+        }
+
 
 
         private static string GetMissingResourcePrompt(string resourcesKey)

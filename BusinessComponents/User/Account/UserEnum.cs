@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareNet.Common.User.Account
+namespace ShareNet.Common
 {
     /// <summary>
     /// 注册方式
@@ -145,6 +145,38 @@ namespace ShareNet.Common.User.Account
         /// 不合法的密码
         /// </summary>
         InvalidPassword = 8
+    }
+
+
+    /// <summary>
+    /// 用户登录状态
+    /// </summary>
+    public enum UserLoginStatus
+    {
+        /// <summary>
+        /// 通过身份验证，登录成功
+        /// </summary>
+        Success = 0,
+
+        /// <summary>
+        /// 用户名、密码不匹配
+        /// </summary>
+        InvalidCredentials = 1,
+
+        /// <summary>
+        /// 帐户未激活
+        /// </summary>
+        NotActivated = 2,
+
+        /// <summary>
+        /// 帐户被封禁
+        /// </summary>
+        Banned = 3,
+
+        /// <summary>
+        /// 未知错误
+        /// </summary>
+        UnknownError = 100
     }
 
 }

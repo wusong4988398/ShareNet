@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareNet.Common.Common.Settings
+namespace ShareNet.Common
 {
     public interface ISettingsManager<TSettingsEntity> where TSettingsEntity : class
     {

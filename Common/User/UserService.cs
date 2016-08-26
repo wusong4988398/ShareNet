@@ -25,5 +25,19 @@ namespace ShareNet.Common.User
            
             return userRepository.GetUser(userId);
         }
+
+        public IUser GetUser(string userName)
+        {
+            long userId = UserIdToUserNameDictionary.GetUserId(userName);
+            return GetUser(userId);
+        }
+
+        public IUser FindUserByEmail(string accountEmail)
+        {
+            if (string.IsNullOrEmpty(accountEmail)) return null;
+            long userid = userRepository.GetUserIdByEmail(accountEmail);
+            return GetUser(userid);
+
+        }
     }
 }

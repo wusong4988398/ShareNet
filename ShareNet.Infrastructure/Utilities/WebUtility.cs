@@ -102,7 +102,11 @@ namespace ShareNet.Infrastructure.Utilities
             }
             return str5;
         }
-
+        /// <summary>
+        /// 获取带传输协议的完整的主机地址
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
         public static string HostPath(Uri uri)
         {
             if (uri == null)
@@ -130,7 +134,11 @@ namespace ShareNet.Infrastructure.Utilities
             }
             return HttpUtility.HtmlEncode(rawContent);
         }
-
+        /// <summary>
+        ///  将URL转换为在请求客户端可用的 URL（转换 ~/ 为绝对路径）
+        /// </summary>
+        /// <param name="relativeUrl">相对url</param>
+        /// <returns></returns>
         public static string ResolveUrl(string relativeUrl)
         {
             if (string.IsNullOrEmpty(relativeUrl))
@@ -205,7 +213,11 @@ namespace ShareNet.Infrastructure.Utilities
             }
             return HttpUtility.UrlDecode(urlToDecode);
         }
-
+        /// <summary>
+        /// Url编码
+        /// </summary>
+        /// <param name="urlToEncode">待编码的url字符串</param>
+        /// <returns>编码后的url字符串</returns>
         public static string UrlEncode(string urlToEncode)
         {
             if (string.IsNullOrEmpty(urlToEncode))

@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using ShareNet.Common;
 using ShareNet.Common.User;
 using ShareNet.Common.User.Account;
 using WusNet.Infrastructure.Repositories;

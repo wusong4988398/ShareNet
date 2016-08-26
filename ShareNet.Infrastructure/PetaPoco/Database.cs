@@ -1325,7 +1325,10 @@ namespace PetaPoco
         /// </remarks>
         public T SingleOrDefault<T>(object primaryKey)
         {
-            return SingleOrDefault<T>(string.Format("WHERE {0}=@0", _provider.EscapeSqlIdentifier(PocoData.ForType(typeof(T), _defaultMapper).TableInfo.PrimaryKey)), primaryKey);
+            Console.WriteLine();
+           return SingleOrDefault<T>(string.Format("WHERE {0}=@0", _provider.EscapeSqlIdentifier(PocoData.ForType(typeof(T)).TableInfo.PrimaryKey)), primaryKey);
+            //return this.SingleOrDefault<T>(string.Format("WHERE {0}=@0", _provider.EscapeSqlIdentifier(PocoData.ForType(typeof(T)).TableInfo.PrimaryKey)), new object[] { primaryKey });
+
         }
 
         /// <summary>

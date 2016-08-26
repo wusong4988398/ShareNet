@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShareNet.Common.UI.Resources
+namespace ShareNet.Common
 {
     /// <summary>
     /// 静态资源(js/css)及html页面meta、ShortcutIcon管理

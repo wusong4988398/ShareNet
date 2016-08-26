@@ -7,7 +7,7 @@ using ShareNet.Common.User.Role;
 using WusNet.Infrastructure.Caching;
 using WusNet.Infrastructure.WusNet;
 
-namespace ShareNet.Common.User.Account.Configuration
+namespace ShareNet.Common
 {
     /// <summary>
     /// 用户相关设置

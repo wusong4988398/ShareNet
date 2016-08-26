@@ -89,23 +89,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChannelController.cs" />
     <Compile Include="Controllers\ControlPanelController.cs" />
+    <Compile Include="Handlers\CaptchaHttpHandler.cs" />
     <Compile Include="Implementation\DefaultIdGenerator.cs" />
     <Compile Include="Mvc\Attributes\NoCleanHtmlAttribute.cs" />
     <Compile Include="Mvc\Attributes\NoFilterWordAttribute.cs" />
+    <Compile Include="Mvc\Html\HtmlHelper.cs" />
+    <Compile Include="Mvc\Html\HtmlHelper.Message.cs" />
+    <Compile Include="Mvc\Html\HtmlHelper.Captcha.cs" />
+    <Compile Include="Mvc\Html\HtmlHelper.Link.cs" />
+    <Compile Include="Mvc\Html\HtmlHelper.User.cs" />
     <Compile Include="Mvc\ModelBinder\CookieValueProviderFactory.cs" />
     <Compile Include="Mvc\ModelBinder\CustomModelBinder.cs" />
+    <Compile Include="Mvc\Routes\CachedUrlHelper.cs" />
+    <Compile Include="Mvc\Routes\HttpHandlerRouteHandler.cs" />
+    <Compile Include="Mvc\Routes\RouteExtensions.cs" />
     <Compile Include="Mvc\TempData\CookieTempDataProvider.cs" />
     <Compile Include="Mvc\TempData\WusNetControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteUrls.cs" />
     <Compile Include="UI\ChannelThemeResolver.cs" />
     <Compile Include="UI\ControlPanelThemeResolver.cs" />
     <Compile Include="UI\Resources\IPageResourceManager.cs" />
     <Compile Include="UI\Resources\MetaEntry.cs" />
+    <Compile Include="UI\Resources\MvcHead.cs" />
+    <Compile Include="UI\Resources\PageResourceExtensions.cs" />
     <Compile Include="UI\Resources\PageResourceManager.cs" />
     <Compile Include="UrlRoutingRegistration.cs" />
     <Compile Include="User\DefaultUserIdToUserNameDictionary.cs" />
+    <Compile Include="User\EventOperationTypeExtension.cs" />
+    <Compile Include="User\MembershipService.cs" />
     <Compile Include="User\UserIdToUserNameDictionary.cs" />
     <Compile Include="User\FormsAuthenticationService.cs" />
     <Compile Include="User\Repositories\EducationExperienceRepository.cs" />
@@ -118,11 +133,18 @@
     <Compile Include="User\Repositories\WorkExperienceRepository.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="User\UserEnum.cs" />
+    <Compile Include="User\UserPasswordHelper.cs" />
     <Compile Include="User\UserProfile.cs" />
     <Compile Include="User\UserProfileService.cs" />
     <Compile Include="User\UserQuery.cs" />
     <Compile Include="User\UserService.cs" />
     <Compile Include="User\UserServiceExtension.cs" />
+    <Compile Include="Utilities\Captcha\CaptchaCharacterSet.cs" />
+    <Compile Include="Utilities\Captcha\CaptchaSettings.cs" />
+    <Compile Include="Utilities\Captcha\CaptchaUtility.cs" />
+    <Compile Include="Utilities\Captcha\DefaultCaptchaManager.cs" />
+    <Compile Include="Utilities\Captcha\ICaptchaManager.cs" />
+    <Compile Include="Utilities\Captcha\VerificationCode\Enum\VerificationCodePersistenceMode.cs" />
     <Compile Include="Utilities\Extensions\NameValueCollectionExtension.cs" />
     <Compile Include="Utilities\Extensions\RequestContextExtension.cs" />
     <Compile Include="Utilities\Formatter.cs" />

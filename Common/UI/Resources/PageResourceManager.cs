@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Optimization;
 using ShareNet.Infrastructure.Utilities;
 
-namespace ShareNet.Common.UI.Resources
+namespace ShareNet.Common
 {
     /// <summary>
     /// IResourceManager的默认实现

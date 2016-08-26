@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PetaPoco;
 using ShareNet.Common.Common.Settings;
 using ShareNet.Common.User.Account;
-using ShareNet.Common.User.Account.Configuration;
+
 using ShareNet.Common.User.OnlineUser;
 using ShareNet.Common.Utilities;
 using ShareNet.Infrastructure.PetaPoco;
@@ -19,7 +19,7 @@ namespace ShareNet.Common.User
     /// <summary>
     /// 用户帐号
     /// </summary>
-    [TableName("tn_Users")]
+    [TableName("sh_Users")]
     [PrimaryKey("UserId", AutoIncrement = false)]
     [CacheSetting(true)]
     [Serializable]

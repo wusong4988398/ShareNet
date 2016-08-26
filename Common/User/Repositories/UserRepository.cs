@@ -9,12 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PetaPoco;
-using ShareNet.Common.Common.Settings;
-using ShareNet.Common.User.Account;
-using ShareNet.Common.User.Account.Configuration;
+
+
 using ShareNet.Common.User.Point.Configuration;
 using Spacebuilder.Common;
-using WusNet.Infrastructure.Caching;
+
 using WusNet.Infrastructure.Repositories;
 using WusNet.Infrastructure.Utilities;
 using WusNet.Infrastructure.WusNet;
@@ -346,7 +345,7 @@ namespace ShareNet.Common.User.Repositories
         /// <returns>用户Id</returns>
         public long GetUserIdByUserName(string userName)
         {
-            var sql_Select = Sql.Builder.Select("UserId").From("tn_Users").Where("UserName = @0", userName);
+            var sql_Select = Sql.Builder.Select("UserId").From("sh_Users").Where("UserName = @0", userName);
             return CreateDao().FirstOrDefault<long>(sql_Select);
         }
 
@@ -357,7 +356,7 @@ namespace ShareNet.Common.User.Repositories
         /// <returns>用户id</returns>
         public long GetUserIdByNickName(string nickName)
         {
-            var sql_Select = Sql.Builder.Select("UserId").From("tn_Users").Where("NickName = @0", nickName);
+            var sql_Select = Sql.Builder.Select("UserId").From("sh_Users").Where("NickName = @0", nickName);
             return CreateDao().FirstOrDefault<long>(sql_Select);
         }
 
@@ -369,7 +368,7 @@ namespace ShareNet.Common.User.Repositories
         public long GetUserIdByEmail(string accountEmail)
         {
             var sql_Select = Sql.Builder;
-            sql_Select.Append("select UserId from tn_Users where AccountEmail = @0", accountEmail);
+            sql_Select.Append("select UserId from sh_Users where AccountEmail = @0", accountEmail);
             return CreateDao().FirstOrDefault<long>(sql_Select);
         }
 
@@ -381,7 +380,7 @@ namespace ShareNet.Common.User.Repositories
         public long GetUserIdByMobile(string accountMobile)
         {
             var sql_Select = Sql.Builder;
-            sql_Select.Append("select UserId from tn_Users where AccountMobile = @0", accountMobile);
+            sql_Select.Append("select UserId from sh_Users where AccountMobile = @0", accountMobile);
             return CreateDao().FirstOrDefault<long>(sql_Select);
         }
 
@@ -456,8 +455,8 @@ namespace ShareNet.Common.User.Repositories
         public IEnumerable<IUser> GetUsers(List<string> roleName, int minRank = 0, int maxRank = 0)
         {
             Sql sql = Sql.Builder;
-            sql.Select("tn_Users.UserId")
-                .From("tn_Users");
+            sql.Select("sh_Users.UserId")
+                .From("sh_Users");
 
             if (minRank > 0)
             {
@@ -470,7 +469,7 @@ namespace ShareNet.Common.User.Repositories
             if (roleName != null && roleName.Count() > 0)
             {
                 sql.InnerJoin("tn_UsersInRoles")
-                    .On("tn_Users.UserId=tn_UsersInRoles.UserId")
+                    .On("sh_Users.UserId=tn_UsersInRoles.UserId")
                     .Where("tn_UsersInRoles.RoleName in (@0)", roleName);
             }
             IEnumerable<long> userIds = CreateDao().Fetch<long>(sql);

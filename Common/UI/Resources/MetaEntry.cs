@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace ShareNet.Common.UI.Resources
+namespace ShareNet.Common
 {
    public class MetaEntry
     {
@@ -99,7 +99,13 @@ namespace ShareNet.Common.UI.Resources
            return this;
        }
 
-
+       /// <summary>
+       /// 在页面呈现的html标签
+       /// </summary>
+       public string GetRenderingTag()
+       {
+           return _builder.ToString(TagRenderMode.SelfClosing);
+       }
 
     }
 }

@@ -21,7 +21,11 @@ namespace WusNet.Infrastructure.Utilities
         {
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(str));
         }
-
+        /// <summary>
+        /// 标准的MD5加密
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string MD5(string str)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(str);

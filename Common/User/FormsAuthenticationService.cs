@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Security;
 using ShareNet.Common.User.Account;
+using WusNet.Infrastructure.Events;
 using WusNet.Infrastructure.WusNet;
 
 namespace ShareNet.Common.User
@@ -22,7 +23,14 @@ namespace ShareNet.Common.User
         /// <param name="rememberPassword">是否记住密码</param>
         public void SignIn(IUser user, bool rememberPassword)
         {
-            throw new NotImplementedException();
+            FormsAuthentication.SetAuthCookie(user.UserName,rememberPassword);
+            IUser _singnedUser = GetAuthenticatedUser();
+            User user_object=user as User;
+            if (user_object!=null)
+            {
+                EventBus<User>.Instance().OnAfter(user_object, new CommonEventArgs(EventOperationType.Instance().SignIn()));
+            }
+
         }
 
         /// <summary>

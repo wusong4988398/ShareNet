@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ShareNet.Common.Common.Settings.Repositories;
 using WusNet.Infrastructure.WusNet;
 
-namespace ShareNet.Common.Common.Settings
+namespace ShareNet.Common
 {
     public class SettingsManager<TSettingsEntity> : ISettingsManager<TSettingsEntity> where TSettingsEntity : class, IEntity, new()
     {

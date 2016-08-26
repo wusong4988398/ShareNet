@@ -7,7 +7,7 @@ using System.Web.Routing;
 using ShareNet.Common.Common.Settings;
 using ShareNet.Common.Common.SiteSetting;
 using ShareNet.Common.PresentAreas;
-using ShareNet.Common.UI.Resources;
+
 using ShareNet.Common.UI.Themes;
 using ShareNet.Common.User;
 using ShareNet.Common.Utilities;

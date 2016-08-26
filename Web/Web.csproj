@@ -182,6 +182,11 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +241,103 @@
     <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\spb-sidebar-bg.png" />
     <Content Include="Themes\ControlPanel\Default\Appearances\Default\Images\wait.gif" />
     <Content Include="Themes\ControlPanel\Default\theme.css" />
+    <Content Include="Themes\Shared\Styles\common.css" />
+    <Content Include="Themes\Shared\Styles\icons\25gray\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\25gray\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\50gray\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\50gray\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\75gray\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\75gray\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\blue\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\blue\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\cyan\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\cyan\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\green\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\green\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\moon.gif" />
+    <Content Include="Themes\Shared\Styles\icons\orange\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\orange\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\red\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\red\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\star.gif" />
+    <Content Include="Themes\Shared\Styles\icons\sun.gif" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-charts.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-file.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-large.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-praise.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-special.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-third-party.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-thumb-down.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icon-thumb-up.png" />
+    <Content Include="Themes\Shared\Styles\icons\tn-icons-color.png" />
+    <Content Include="Themes\Shared\Styles\icons\user_IsOffline.gif" />
+    <Content Include="Themes\Shared\Styles\icons\user_IsOnline.gif" />
+    <Content Include="Themes\Shared\Styles\icons\v.png" />
+    <Content Include="Themes\Shared\Styles\icons\violet\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\violet\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\white\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\white\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\icons\yellow\tn-icon-big.png" />
+    <Content Include="Themes\Shared\Styles\icons\yellow\tn-icon-small.png" />
+    <Content Include="Themes\Shared\Styles\images\126.png" />
+    <Content Include="Themes\Shared\Styles\images\163.png" />
+    <Content Include="Themes\Shared\Styles\images\ajaxloading.gif" />
+    <Content Include="Themes\Shared\Styles\images\arrow.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-0065a2.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-014b78.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-b2cede.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-cccccc.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-cce0ec.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-gradient-dddddd.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-pipe-d6e4ec.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-pipe-e3ecf2.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-pipe-eff5f8.png" />
+    <Content Include="Themes\Shared\Styles\images\bg-solid-ffffff.png" />
+    <Content Include="Themes\Shared\Styles\images\dateicon.jpg" />
+    <Content Include="Themes\Shared\Styles\images\default_event.png" />
+    <Content Include="Themes\Shared\Styles\images\default_forum.png" />
+    <Content Include="Themes\Shared\Styles\images\default_forum50.png" />
+    <Content Include="Themes\Shared\Styles\images\default_group.png" />
+    <Content Include="Themes\Shared\Styles\images\default_group50.png" />
+    <Content Include="Themes\Shared\Styles\images\default_img.png" />
+    <Content Include="Themes\Shared\Styles\images\figure.jpg" />
+    <Content Include="Themes\Shared\Styles\images\friendly.png" />
+    <Content Include="Themes\Shared\Styles\images\gmail.png" />
+    <Content Include="Themes\Shared\Styles\images\music.png" />
+    <Content Include="Themes\Shared\Styles\images\password-bar.png" />
+    <Content Include="Themes\Shared\Styles\images\qq.png" />
+    <Content Include="Themes\Shared\Styles\images\spb-ctnbox-bg.png" />
+    <Content Include="Themes\Shared\Styles\images\spb-music-box.png" />
+    <Content Include="Themes\Shared\Styles\images\spb-photo-bg.png" />
+    <Content Include="Themes\Shared\Styles\images\spb-sprite-bg.png" />
+    <Content Include="Themes\Shared\Styles\images\spb_logo.png" />
+    <Content Include="Themes\Shared\Styles\images\tipsy.gif" />
+    <Content Include="Themes\Shared\Styles\images\tn-img-sprite.png" />
+    <Content Include="Themes\Shared\Styles\images\tn-ui-round-corner.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-icons_888888_256x240.png" />
+    <Content Include="Themes\Shared\Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Themes\Shared\Styles\images\uploadify-cancel.png" />
+    <Content Include="Themes\Shared\Styles\images\upload_avatar_bg.png" />
+    <Content Include="Themes\Shared\Styles\images\video.png" />
+    <Content Include="Themes\Shared\Styles\images\voice_player_bg.png" />
+    <Content Include="Themes\Shared\Styles\images\voice_player_bg_ie.gif" />
+    <Content Include="Themes\Shared\Styles\images\wait.png" />
+    <Content Include="Themes\Shared\Styles\tn.core_src.css" />
+    <Content Include="Themes\Shared\Styles\tn.theme_src.css" />
+    <Content Include="Themes\Shared\Styles\tn.widgets_src.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -251,12 +353,15 @@
     <Content Include="Themes\ControlPanel\Default\Views\ControlPanel\Home.cshtml" />
     <Content Include="Themes\ControlPanel\Default\Layouts\_ControlPanel.cshtml" />
     <Content Include="Themes\Channel\Default\Views\Channel\SimpleHome.cshtml" />
+    <Content Include="Themes\Channel\Default\Layouts\_Account.cshtml" />
+    <Content Include="Themes\Channel\Default\Views\Account\Login.cshtml" />
+    <Content Include="Themes\Shared\Views\DisplayTemplates\PresetMessage.cshtml" />
+    <Content Include="Themes\Shared\Views\DisplayTemplates\StatusMessage.cshtml" />
+    <Content Include="Themes\Shared\Views\EditorTemplates\DefaultCaptchaInput.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Themes\Channel\Default\Appearances\Dark\" />
-    <Folder Include="Themes\Channel\Default\Layouts\" />
-    <Folder Include="Themes\Channel\Default\Views\Account\" />
     <Folder Include="Themes\Channel\Layouts\" />
     <Folder Include="Themes\Channel\Portal\" />
   </ItemGroup>
@@ -280,6 +385,12 @@
       <Project>{86D26D92-F3BC-48BE-AC68-C1BE2C986F1B}</Project>
       <Name>WusNet.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

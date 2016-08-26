@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -6,12 +7,15 @@ using System.Web;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using ShareNet.Common;
 using ShareNet.Common.Common.Settings;
 using ShareNet.Common.Common.Settings.Repositories;
 using ShareNet.Common.Mvc.ModelBinder;
 using ShareNet.Common.Mvc.TempData;
 using ShareNet.Common.UI;
+
 using ShareNet.Common.UI.Themes;
+using ShareNet.Common.User;
 using WusNet.Infrastructure.Caching;
 using WusNet.Infrastructure.Globalization;
 using WusNet.Infrastructure.Logging;
@@ -34,6 +38,7 @@ namespace ShareNet.Web
             //初始化ResourceAccessor(资源存储器)
            // ResourceAccessor.Initialize("Spacebuilder.Web.Resources.Resource", typeof(Spacebuilder.Web.Resources.Resource).Assembly);
            // ResourceAccessor.Initialize("Spacebuilder.Web.Resources.Resource", null);
+            ResourceAccessor.Initialize("ShareNet.Web.Resources.Resources", typeof(ShareNet.Web.Resources.Resources).Assembly);
             InitializeDiContainer();
             InitializeMVC();
             InitializeApplication();
@@ -86,6 +91,15 @@ namespace ShareNet.Web
             //注册系统日志
             containerBuilder.Register(c => new Log4NetLoggerFactoryAdapter()).As<ILoggerFactoryAdapter>().SingleInstance();
 
+            //注册PageResourceManager
+
+            string resourceSite = null;
+            if (ConfigurationManager.AppSettings["PageResource:Site"] != null)
+                resourceSite = ConfigurationManager.AppSettings["PageResource:Site"];
+
+            containerBuilder.Register(c => new PageResourceManager("松武 v1.0") { ResourceSite = resourceSite }).As<IPageResourceManager>().InstancePerHttpRequest();
+
+
             #endregion
 
             #region 范型注入
@@ -98,6 +112,8 @@ namespace ShareNet.Web
             #endregion
 
             #region 业务逻辑实现
+            //查询UserID与UserName的查询器
+            containerBuilder.Register(c => new DefaultUserIdToUserNameDictionary()).As<UserIdToUserNameDictionary>().SingleInstance().PropertiesAutowired();
 
             //注册缓存
             if (false)

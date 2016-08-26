@@ -96,6 +96,7 @@
     <Compile Include="UI\Themes\ThemeService.cs" />
     <Compile Include="User\Account\Configuration\UserSettings.cs" />
     <Compile Include="User\Account\IAuthenticationService.cs" />
+    <Compile Include="User\Account\IMembershipService.cs" />
     <Compile Include="User\Account\IUserService.cs" />
     <Compile Include="User\Account\UserEnum.cs" />
     <Compile Include="User\IUser.cs" />

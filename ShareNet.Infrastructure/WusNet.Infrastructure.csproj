@@ -90,7 +90,11 @@
     <Compile Include="Caching\IListCacheSetting.cs" />
     <Compile Include="Caching\RealTimeCacheHelper.cs" />
     <Compile Include="Caching\RuntimeMemoryCache.cs" />
+    <Compile Include="Events\CommonEventArgs.cs" />
     <Compile Include="Events\DelgeteClass.cs" />
+    <Compile Include="Events\EventBus.cs" />
+    <Compile Include="Events\EventBus_2.cs" />
+    <Compile Include="Events\EventOperationType.cs" />
     <Compile Include="Events\IEventBus.cs" />
     <Compile Include="Globalization\ResourceAccessor.cs" />
     <Compile Include="Logging.Log4Net\Log4NetLogger.cs" />
@@ -173,10 +177,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Utilities\DictionaryExtension.cs" />
     <Compile Include="Utilities\HtmlUtility.cs" />
     <Compile Include="Utilities\StringUtility.cs" />
     <Compile Include="Utilities\TrustedHtml.cs" />
     <Compile Include="Utilities\TrustedHtmlLevel.cs" />
+    <Compile Include="Utilities\ValueUtility.cs" />
     <Compile Include="WusNet\CommonExceptionDescriptor.cs" />
     <Compile Include="WusNet\DefaultRunningEnvironment.cs" />
     <Compile Include="WusNet\DIContainer.cs" />
